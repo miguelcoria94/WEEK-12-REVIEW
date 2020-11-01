@@ -91,7 +91,9 @@ human readable form. Hashing is a better way of protecting user passwords
 
 * sessions give you a way to identify a series of requests as being connected to the same client
 
+### what are the drawbacks?
 
+* using sessions increases the overhead required to server clients
 
 
 
