@@ -18,4 +18,13 @@ router.get(
   })
 );
 
+router.post(
+    "/",
+    asyncHandler(async (req, res) => {
+        const { name } = req.body
+        const task = await Task.create({ name })
+        res.status(201).json({task})
+    })
+)
+
 module.exports = router;
