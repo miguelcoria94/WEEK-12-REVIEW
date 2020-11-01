@@ -45,7 +45,7 @@ human readable form. Hashing is a better way of protecting user passwords
 
 * hashed values cannot be translated back to their orginal input values, you will recieve the same output
 
-### How does hasing work?
+### How does hashing work?
 
 * there are many types of hashing functions
 
