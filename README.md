@@ -131,5 +131,9 @@ human readable form. Hashing is a better way of protecting user passwords
 
 * the app can then retrieve the user's account info and make it available to other middleware, the route handler and the view
 
+### what is authorization
 
+* authorization is the process of determing if the currently logged in user has access to an apps data or features
+
+* sometimes data is associated directly with a user
 
