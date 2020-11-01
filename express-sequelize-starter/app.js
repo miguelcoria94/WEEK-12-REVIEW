@@ -4,10 +4,7 @@ const { environment } = require('./config');
 const app = express();
 
 app.use(morgan("dev"));
-
-app.get("/", (req, res) => {
-  res.send("Welcome to the express-sequelize-starter!");
-});
+app.use(express.json())
 
 // Catch unhandled requests and forward to error handler.
 app.use((req, res, next) => {
