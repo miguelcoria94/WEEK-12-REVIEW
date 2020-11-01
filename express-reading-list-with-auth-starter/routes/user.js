@@ -1,10 +1,11 @@
 const express = require("express")
+const bcrypt = require("bcryptjs")
 const { check, validationResult } = require("express-validator")
 
 const db = require('../db/models')
 const { csrfProtection, asyncHandler } = require("./utils")
 
-const router = express.Router
+const router = express.Router()
 
 router.get("/user/register", csrfProtection, (req, res) => {
     const user = db.User.build();
@@ -66,35 +67,36 @@ const userValidators = [
     }),
 ];
 
-router.post("/user/register", csrfProtection, userValidators,
-    asyncHandler(async (req, res) => {
-        const {
-            emailAddress,
-            firstName,
-            lastName,
-            password,
-        } = req.body
-        
-        const user = db.User.build({
-            emailAddress,
-            firstName,
-            lastName
-        })
+router.post(
+  "/user/register",
+  csrfProtection,
+  userValidators,
+  asyncHandler(async (req, res) => {
+    const { emailAddress, firstName, lastName, password } = req.body;
 
-        const validatorErrors = validationResult(req)
+    const user = db.User.build({
+      emailAddress,
+      firstName,
+      lastName,
+    });
 
-        if (validatorErrors.isEmpty()) {
-            await user.save()
-            res.redirect('/')
-        } else {
-            const errors = validatorErrors.array().map((error) => error.msg)
-            res.render("user-register", {
-                title: "Register",
-                user,
-                errors,
-                csrfToken: req.csrfToken(),
-            })
-        }
-}))
+    const validatorErrors = validationResult(req);
+
+    if (validatorErrors.isEmpty()) {
+      const hashedPassword = await bcrypt.hash(password, 10);
+      user.hashedPassword = hashedPassword;
+      await user.save();
+      res.redirect("/");
+    } else {
+      const errors = validatorErrors.array().map((error) => error.msg);
+      res.render("user-register", {
+        title: "Register",
+        user,
+        errors,
+        csrfToken: req.csrfToken(),
+      });
+    }
+  })
+);
 
 module.exports = router

@@ -3,11 +3,14 @@ const express = require('express');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 
+const user = require('./db/models/user');
 const bookRoutes = require('./routes/book');
+const userRoutes = require("./routes/user");
 
 const app = express();
 
 app.use(bookRoutes)
+app.use(userRoutes)
 
 app.set('view engine', 'pug');
 app.use(morgan('dev'));
