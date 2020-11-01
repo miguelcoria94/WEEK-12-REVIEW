@@ -1,11 +1,13 @@
 
 const express = require('express');
 const session = require("express-session")
+const store = require('connect-pg-simple')
 
 const app = express();
 
 app.use(
   session({
+    store: new (store(session))(),
     // ideally the session secret option is set from an environment variable.
     // the secret is used to sign the session ID cookie
     secret: "a5d63fc5-17a5-459c-b3ba-6d81792158fc",
