@@ -13,7 +13,6 @@ app.set('view engine', 'pug');
 app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
-app.use(routes);
 
 // Catch unhandled requests and forward to error handler.
 app.use((req, res, next) => {
