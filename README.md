@@ -109,5 +109,27 @@ human readable form. Hashing is a better way of protecting user passwords
 
 ### authenticatino process
 
+* a user provides their username and pw via an HTML form
+
+* the form is then post on the server
+
+* the login route handler attempts to retrieve the user from the db using their username
+
+* if the user is found, then the user accounts hashed pw is checked against the provided pw
+
+* remember passwords are stored as hashes
+
+* the users pw needs to be hashed before it can be compared to the password from the database
+
+* of the password matches then the user is logged in
+
+* with session-based authentication, the user's id is stored in the session
+
+* subsequent request to the app can then check if the session contains a user id
+
+* if a user ID is available, then the user is logged in
+
+* the app can then retrieve the user's account info and make it available to other middleware, the route handler and the view
+
 
 
