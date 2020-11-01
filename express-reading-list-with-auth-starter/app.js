@@ -8,6 +8,7 @@ const user = require('./db/models/user');
 const { sessionSecret } = require('./config')
 const bookRoutes = require('./routes/book');
 const userRoutes = require("./routes/user");
+const { restoreUser } = require("./auth")
 
 const app = express();
 
@@ -25,6 +26,7 @@ app.use(
   })
 );
 app.use(express.urlencoded({ extended: false }));
+app.use(restoreUser)
 app.use(bookRoutes)
 app.use(userRoutes)
 
