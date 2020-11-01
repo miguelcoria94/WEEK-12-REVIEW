@@ -16,3 +16,24 @@ in the worst case scenario
 
 * encryption is the process of translating something readable into something that looks like nonsense
 and being able to translate it from a non-readible state back into something that's readable
+
+### How does encryption work?
+
+* There are two kinds of encryption, symmetric and asymmetric encryption
+
+* symmetric uses one value to determine how to encrypt data
+
+* asymmetric uses two pieces of information called the public and private keys
+    * the public key is shared with everyone wanting to encrypt a message for the recipent
+    * the private key is used to decrypt the message
+    * encypt with public key, decrypt with private key
+
+* an HTTPS connection is an example of asymmetric encryption
+
+### When is it appropriate to use encryption?
+
+* It's appropriate to use encryption to secure over the wire connection between client and server
+
+* also data at rest (i.e. stored in a database) can also be encrypted.
+
+### What is hashing?
