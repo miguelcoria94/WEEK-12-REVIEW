@@ -95,5 +95,19 @@ human readable form. Hashing is a better way of protecting user passwords
 
 * using sessions increases the overhead required to server clients
 
+### What is authentication?
+
+* authentication is the process of identifying a user.
+
+* we authenticate a user with a key and a secret
+
+* a key is the email
+
+* a secret is the password
+
+* a user's account can also contain other info like a bday, phone #, address
+
+### authenticatino process
+
 
 
