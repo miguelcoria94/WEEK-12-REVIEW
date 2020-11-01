@@ -37,3 +37,11 @@ and being able to translate it from a non-readible state back into something tha
 * also data at rest (i.e. stored in a database) can also be encrypted.
 
 ### What is hashing?
+
+* passwords need to be protected at rest, but you dont need the ability to translate a password back into
+human readable form. Hashing is a better way of protecting user passwords
+
+* hashing is the process of converting a message of any length into a short fixed-length string
+
+* hashed values cannot be translated back to their orginal input values, you will recieve the same output
+
