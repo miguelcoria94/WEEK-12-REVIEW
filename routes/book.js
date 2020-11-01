@@ -3,7 +3,7 @@ const express = require('express');
 const csrf = require('csurf');
 const { check, validationResult } = require('express-validator');
 
-const db = require('./db/models');
+const db = require('../express-reading-list-with-auth-starter/db/models');
 
 const router = express.Router();
 
