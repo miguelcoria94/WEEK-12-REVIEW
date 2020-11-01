@@ -75,7 +75,23 @@ human readable form. Hashing is a better way of protecting user passwords
 
 * you simply hash a provided password and comparte the hash to the stored hash
 
-### Using Bcrypt to hash user passwords
+### overview of sessions
+
+* each http request is independent from other requests that were executed before or after
+
+* after a request is processed and return it forgets about the client
+
+### what are sessions?
+
+* instead of storing data in the cookie itself, a unique identifier known as the session ID is stored
+
+* this session id is linked to an object stored on the server
+
+### why are sessions useful?
+
+* sessions give you a way to identify a series of requests as being connected to the same client
+
+
 
 
 
