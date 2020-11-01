@@ -141,4 +141,29 @@ human readable form. Hashing is a better way of protecting user passwords
 
 * ReST stands for REpresentational state transfer.
 
-* 
+* ReST is an architecture syle for designing network applications
+
+* ReST is not an official standard
+
+* it's just a set of rules/constraints
+
+* common with api's
+
+* not every api actually follows RESTful conventions
+
+1. server and client should be decoupled so they can evolve separately
+
+2. stateless - no necessary session
+
+3. uniformed 
+
+### what does a RESTful API look like?
+
+* URLs - 2 kinds
+
+* one that points at a collection of resources and one that points at a single resources
+
+* my/tweets - points to a collection
+
+* my/tweets/17 - points at one resources - usually the id the PK of rows in you rDB
+
