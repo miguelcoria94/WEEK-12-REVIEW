@@ -143,6 +143,7 @@ router.post(
           // If the password hashes match, then login the user
           // and redirect them to the default route.
           // TODO Login the user.
+          loginUser(req, res, user);
           return res.redirect("/");
         }
       }
