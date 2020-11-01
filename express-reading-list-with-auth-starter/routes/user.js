@@ -1,21 +1,21 @@
-const express = require("express")
-const bcrypt = require("bcryptjs")
-const { check, validationResult } = require("express-validator")
+const express = require("express");
+const bcrypt = require("bcryptjs");
+const { check, validationResult } = require("express-validator");
 
-const db = require('../db/models')
-const { loginUser, logoutUser } = require('../auth')
-const { csrfProtection, asyncHandler } = require("./utils")
+const db = require("../db/models");
+const { loginUser, logoutUser } = require("../auth");
+const { csrfProtection, asyncHandler } = require("./utils");
 
-const router = express.Router()
+const router = express.Router();
 
 router.get("/user/register", csrfProtection, (req, res) => {
-    const user = db.User.build();
-    res.render("user-register", {
-        title: "Register",
-        user,
-        csrfToken: req.csrfToken()
-    })
-})
+  const user = db.User.build();
+  res.render("user-register", {
+    title: "Register",
+    user,
+    csrfToken: req.csrfToken(),
+  });
+});
 
 const userValidators = [
   check("firstName")
@@ -86,8 +86,8 @@ router.post(
     if (validatorErrors.isEmpty()) {
       const hashedPassword = await bcrypt.hash(password, 10);
       user.hashedPassword = hashedPassword;
-        await user.save();
-        loginUser(req, res, user)
+      await user.save();
+      loginUser(req, res, user);
       res.redirect("/");
     } else {
       const errors = validatorErrors.array().map((error) => error.msg);
@@ -165,9 +165,8 @@ router.post(
 
 //does not use csrfProtection because it is not modifying the db
 router.post("/user/logout", (req, res) => {
-    logoutUser(req, res)
-    res.redirect('/user/login')
-})
+  logoutUser(req, res);
+  res.redirect("/user/login");
+});
 
-
-module.exports = router
+module.exports = router;
