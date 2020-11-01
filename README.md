@@ -137,3 +137,8 @@ human readable form. Hashing is a better way of protecting user passwords
 
 * sometimes data is associated directly with a user
 
+### getting started with restful inputs
+
+* ReST stands for REpresentational state transfer.
+
+* 
