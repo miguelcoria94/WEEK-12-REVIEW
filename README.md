@@ -75,5 +75,7 @@ human readable form. Hashing is a better way of protecting user passwords
 
 * you simply hash a provided password and comparte the hash to the stored hash
 
+### Using Bcrypt to hash user passwords
+
 
 
