@@ -11,4 +11,4 @@ in the worst case scenario
 
 * adversaries are third-parties who could possibly fake a user's identity to gain their secret value
 
-* encoding 
+* encoding and encrytion are two different processes
