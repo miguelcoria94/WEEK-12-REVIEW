@@ -37,9 +37,14 @@ const restoreUser = async (req, res, next) => {
   }
 };
 
+const logoutUser = (req, res) => {
+    delete req.session.auth;
+}
+
 module.exports = {
   loginUser,
   restoreUser,
+  logoutUser,
 };
 
 // now that you've configured sessions in express app, you can persist the user's login state using a session
