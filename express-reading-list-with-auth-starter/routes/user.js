@@ -3,7 +3,7 @@ const bcrypt = require("bcryptjs")
 const { check, validationResult } = require("express-validator")
 
 const db = require('../db/models')
-const { loginUser } = require('../auth')
+const { loginUser, logoutUser } = require('../auth')
 const { csrfProtection, asyncHandler } = require("./utils")
 
 const router = express.Router()
@@ -162,6 +162,12 @@ router.post(
     });
   })
 );
+
+//does not use csrfProtection because it is not modifying the db
+router.post("/user/logout", (req, res) => {
+    logoutUser(req, res)
+    res.redirect('/user/login')
+})
 
 
 module.exports = router
