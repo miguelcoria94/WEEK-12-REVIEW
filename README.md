@@ -45,3 +45,15 @@ human readable form. Hashing is a better way of protecting user passwords
 
 * hashed values cannot be translated back to their orginal input values, you will recieve the same output
 
+### How does hasing work?
+
+* there are many types of hashing functions
+
+* It's important to use cryptographic hashing functions, they minimize hash collisions.
+
+* We are going to be using the BCrypt library which uses the blowfish cipher
+
+* the blowfish cypher is an encryption alogrithm
+
+
+
