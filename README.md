@@ -55,5 +55,25 @@ human readable form. Hashing is a better way of protecting user passwords
 
 * the blowfish cypher is an encryption alogrithm
 
+### What is a "Salt"?
+
+* for when multiple users have the same password
+
+* salting is generating a small reandom string to set of bits known as a salt.
+
+* you then add that salt to your users password before hashing
+
+### When is it appropriate to use hashing?
+
+* hashing is popular for storing passwords
+
+* a hashed password is often referred to as a "password digest"
+
+* when a user creates an account, their password digest is saved to the database
+
+* the actual password is never stored
+
+* you simply hash a provided password and comparte the hash to the stored hash
+
 
 
