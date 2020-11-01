@@ -12,3 +12,7 @@ in the worst case scenario
 * adversaries are third-parties who could possibly fake a user's identity to gain their secret value
 
 * encoding and encrytion are two different processes
+(ex. encoding for compressing aaacccbbb a3b3c3, for highly repetitive code)
+
+* encryption is the process of translating something readable into something that looks like nonsense
+and being able to translate it from a non-readible state back into something that's readable
