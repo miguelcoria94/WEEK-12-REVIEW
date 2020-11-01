@@ -1,7 +1,16 @@
 
 const express = require('express');
+const session = require("express-session")
 
 const app = express();
+
+app.use(
+  session({
+    secret: "a5d63fc5-17a5-459c-b3ba-6d81792158fc",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
 
 app.set('view engine', 'pug');
 
