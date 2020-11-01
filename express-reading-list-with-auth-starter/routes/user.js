@@ -3,6 +3,7 @@ const bcrypt = require("bcryptjs")
 const { check, validationResult } = require("express-validator")
 
 const db = require('../db/models')
+const { loginUser } = require('../auth')
 const { csrfProtection, asyncHandler } = require("./utils")
 
 const router = express.Router()
@@ -85,7 +86,8 @@ router.post(
     if (validatorErrors.isEmpty()) {
       const hashedPassword = await bcrypt.hash(password, 10);
       user.hashedPassword = hashedPassword;
-      await user.save();
+        await user.save();
+        loginUser(req, res, user)
       res.redirect("/");
     } else {
       const errors = validatorErrors.array().map((error) => error.msg);
